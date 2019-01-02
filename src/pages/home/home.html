@@ -1,0 +1,190 @@
+<mat-toolbar color="primary" style="padding:20px;">
+    <mat-toolbar-row>
+        <h1>Cámara Raspberry PI
+            <br />
+            <small>PMGV PhenoLab</small>
+            <br />
+            <small>v0.4.6</small>
+        </h1>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div fxLayout="row">
+    <mat-tab-group fxFlex="70">
+        <mat-tab label="Variedades">
+            <h1>Variedades</h1>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-form-field>
+                    <mat-select placeholder="Variedad" [(value)]="variedad">
+                        <mat-option *ngFor="let v of variedades" [value]="v.variedad">{{v.variedad}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Cosecha" [(value)]="harvestVar">
+                        <mat-option *ngFor="let r of harvest" [value]="r">{{r}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Planta" [(value)]="planta">
+                        <mat-option *ngFor="let p of plantas" [value]="p">{{p}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Repetición" [(value)]="repeticionVar">
+                        <mat-option *ngFor="let r of repeticiones" [value]="r">{{r}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Estructura" [(value)]="estructuraVar">
+                        <mat-option *ngFor="let e of estructuras" [value]="e">{{e}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <button mat-button (click)="varReset()"> reset </button>
+            </div>
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>
+                        <h2>Rótulo de la foto </h2>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1>{{variedad || "__"}}.{{harvestVar || "__"}}.{{planta || "__"}}.{{repeticionVar || "__"}}.{{estructuraVar|| "__"}}.jpg</h1>
+                    <h3>{{captureErrorMessage}}</h3>
+                </mat-card-content>
+                <mat-card-actions *ngIf="varNameOK">
+                    <button mat-button mat-raised-button color="warn" (click)="download2('var')" [disabled]="!previewImg"
+                        *ngIf="btnVariedades">BAJAR</button>
+                    <mat-spinner *ngIf="!btnVariedades"></mat-spinner>
+                    <span *ngIf="!btnVariedades">tomando la foto ...</span>
+                </mat-card-actions>
+            </mat-card>
+        </mat-tab>
+
+        <mat-tab label="Segregantes">
+            <h1>Segregantes</h1>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-form-field>
+                    <mat-select placeholder="Espaldera" [(value)]="espaldera">
+                        <mat-option *ngFor="let v of espalderas" [value]="v">{{v}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Hilera" [(value)]="hilera">
+                        <mat-option *ngFor="let v of hileras" [value]="v">{{v}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Posición" [(value)]="posicion">
+                        <mat-option *ngFor="let v of posiciones" [value]="v">{{v}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Cosecha" [(value)]="harvestSeg">
+                        <mat-option *ngFor="let r of harvest" [value]="r">{{r}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Repetición" [(value)]="repeticionSeg">
+                        <mat-option *ngFor="let r of repeticiones" [value]="r">{{r}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Estructura" [(value)]="estructuraSeg">
+                        <mat-option *ngFor="let e of estructuras" [value]="e">{{e}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <button mat-button (click)="segReset()"> reset </button>
+            </div>
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>
+                        <h2>Rótulo de la foto </h2>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1>{{espaldera || "__"}}{{hilera || "__"}}{{posicion || "__"}}.{{harvestSeg ||
+                        "__"}}.{{repeticionSeg || "__"}}.{{estructuraSeg || "__"}}.jpg</h1>
+                        <h3>{{captureErrorMessage}}</h3>
+                </mat-card-content>
+                <mat-card-actions *ngIf="segNameOK">
+                    <button mat-button mat-raised-button color="warn" (click)="download2('seg')" [disabled]="!previewImg"
+                        *ngIf="btnVariedades">BAJAR</button>
+                    <mat-spinner *ngIf="!btnVariedades"></mat-spinner>
+                    <span *ngIf="!btnVariedades">tomando la foto ...</span>
+                </mat-card-actions>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Nombre personalizado">
+            <h1>Nombre presonalizado</h1>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-form-field>
+                    <input matInput [(ngModel)]="customFirst" placeholder="Nombre" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Estructura" [(value)]="customStructure">
+                        <mat-option *ngFor="let e of estructuras" [value]="e">{{e}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Repetición" [(value)]="customRepeticion">
+                        <mat-option *ngFor="let r of repeticiones" [value]="r">{{r}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <button mat-button (click)="customReset()"> reset </button>
+            </div>
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>
+                        <h2>Rótulo de la foto </h2>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1>{{customFirst || "__"}}.{{customStructure || "__"}}.{{customRepeticion || "__"}}.png</h1>
+                    <h3>{{captureErrorMessage}}</h3>
+                </mat-card-content>
+                <mat-card-actions *ngIf="customOK">
+                    <button mat-button mat-raised-button color="warn" (click)="download2('custom')" [disabled]="!previewImg"
+                        *ngIf="btnCustom">BAJAR</button>
+                    <mat-spinner *ngIf="!btnCustom"></mat-spinner>
+                    <span *ngIf="!btnCustom">tomando la foto ...</span>
+                </mat-card-actions>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Configuración">
+            <h1>Configuración</h1>
+            <p>URL del RaspberryPi: {{picUrl}}</p>
+            <input type="text" [(ngModel)]="picUrl" style=" width: 500px; padding: 10px; font-size: 20px; ">
+        </mat-tab>
+    </mat-tab-group>
+    <div fxLayout="column" fxFlex="30">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>Vista previa</h1>
+                </mat-card-title>
+            </mat-card-header>
+            <h3> {{ previewMessage }}</h3>
+            <img *ngIf="previewImg" mat-card-image [src]="previewImg" alt="preview">
+            <mat-card-actions *ngIf="!previewImgLoading">
+                <button mat-button mat-raised-button color="warn" (click)="preview()">CAPTURAR</button>
+                <button mat-button mat-raised-button *ngIf="previewImg" (click)="erasePreview()">Borrar preview</button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-progress-bar mode="indeterminate" *ngIf="previewImgLoading"></mat-progress-bar>
+        <!-- <button mat-button mat-raised-button color="warn" (click)="preview()">vista previa ...</button>
+        <mat-progress-bar mode="indeterminate" *ngIf="!previewImg"></mat-progress-bar>
+        <img width="100%" [src]="previewImg" alt="" /> -->
+        <!-- <button mat-button mat-raised-button (click)"erasePreview()">Borrar preview</button> -->
+    </div>
+</div>
