@@ -4,7 +4,7 @@
             <br />
             <small>PMGV PhenoLab</small>
             <br />
-            <small>v0.4.6</small>
+            <small>v1.0.2</small>
         </h1>
 
     </mat-toolbar-row>
@@ -30,6 +30,9 @@
                         <mat-option *ngFor="let p of plantas" [value]="p">{{p}}</mat-option>
                     </mat-select>
                 </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field>
                     <mat-select placeholder="Repetición" [(value)]="repeticionVar">
                         <mat-option *ngFor="let r of repeticiones" [value]="r">{{r}}</mat-option>
@@ -52,7 +55,8 @@
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <h1>{{variedad || "__"}}.{{harvestVar || "__"}}.{{planta || "__"}}.{{repeticionVar || "__"}}.{{estructuraVar|| "__"}}.jpg</h1>
+                    <h1>{{variedad || "__"}}.{{harvestVar || "__"}}.{{planta || "__"}}.{{repeticionVar ||
+                        "__"}}.{{estructuraVar|| "__"}}.jpg</h1>
                     <h3>{{captureErrorMessage}}</h3>
                 </mat-card-content>
                 <mat-card-actions *ngIf="varNameOK">
@@ -82,6 +86,9 @@
                         <mat-option *ngFor="let v of posiciones" [value]="v">{{v}}</mat-option>
                     </mat-select>
                 </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field>
                     <mat-select placeholder="Cosecha" [(value)]="harvestSeg">
                         <mat-option *ngFor="let r of harvest" [value]="r">{{r}}</mat-option>
@@ -112,7 +119,7 @@
                 <mat-card-content>
                     <h1>{{espaldera || "__"}}{{hilera || "__"}}{{posicion || "__"}}.{{harvestSeg ||
                         "__"}}.{{repeticionSeg || "__"}}.{{estructuraSeg || "__"}}.jpg</h1>
-                        <h3>{{captureErrorMessage}}</h3>
+                    <h3>{{captureErrorMessage}}</h3>
                 </mat-card-content>
                 <mat-card-actions *ngIf="segNameOK">
                     <button mat-button mat-raised-button color="warn" (click)="download2('seg')" [disabled]="!previewImg"
@@ -164,7 +171,15 @@
         <mat-tab label="Configuración">
             <h1>Configuración</h1>
             <p>URL del RaspberryPi: {{picUrl}}</p>
-            <input type="text" [(ngModel)]="picUrl" style=" width: 500px; padding: 10px; font-size: 20px; ">
+            <!-- <input type="text" [(ngModel)]="picUrl" style=" width: 500px; padding: 10px; font-size: 20px; "> -->
+            <mat-form-field>
+                <mat-select placeholder="Cámaras disponibles" [(ngModel)]="picUrl">
+                    <mat-option value="http://192.168.50.4:3000"> Cámara 1 </mat-option>
+                    <mat-option value="http://192.168.50.71:3000"> Cámara 2 </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
         </mat-tab>
     </mat-tab-group>
     <div fxLayout="column" fxFlex="30">

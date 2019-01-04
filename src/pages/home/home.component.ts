@@ -772,7 +772,7 @@ export class HomeComponent implements OnInit {
                 console.log('status', x.status);
                 if (x.status > 200) {
                     if (x.status === 201) {
-                        this.captureErrorMessage = 'Nombre duplicado, Intenta de nuevo.';
+                        this.captureErrorMessage = 'Nombre duplicado, cambia el nombre de la foto para registrar.';
                         if (tipo === 'var') { this.btnVariedades = true; }
 
                         if (tipo === 'seg') { this.btnSeg = true; }
