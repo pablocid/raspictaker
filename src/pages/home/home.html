@@ -4,7 +4,7 @@
             <br />
             <small>PMGV PhenoLab</small>
             <br />
-            <small>v1.0.2</small>
+            <small>v2.2.1</small>
         </h1>
 
     </mat-toolbar-row>
@@ -87,7 +87,6 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field>
                     <mat-select placeholder="Cosecha" [(value)]="harvestSeg">
@@ -123,12 +122,13 @@
                 </mat-card-content>
                 <mat-card-actions *ngIf="segNameOK">
                     <button mat-button mat-raised-button color="warn" (click)="download2('seg')" [disabled]="!previewImg"
-                        *ngIf="btnVariedades">BAJAR</button>
-                    <mat-spinner *ngIf="!btnVariedades"></mat-spinner>
-                    <span *ngIf="!btnVariedades">tomando la foto ...</span>
+                        *ngIf="btnSeg">BAJAR</button>
+                    <mat-spinner *ngIf="!btnSeg"></mat-spinner>
+                    <span *ngIf="!btnSeg">tomando la foto ...</span>
                 </mat-card-actions>
             </mat-card>
         </mat-tab>
+
         <mat-tab label="Nombre personalizado">
             <h1>Nombre presonalizado</h1>
             <div fxLayout="row" fxLayoutAlign="center center">

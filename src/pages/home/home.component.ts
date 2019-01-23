@@ -36,584 +36,85 @@ export class HomeComponent implements OnInit {
     public harvest = ['cosecha', 'postcosecha'];
 
     // variables de variedades
-
     public variedades = [
-        {
-            'variedad': 'AG ISIOUM'
-        },
-        {
-            'variedad': 'AGOUMASTO'
-        },
-        {
-            'variedad': 'AGOURANE'
-        },
-        {
-            'variedad': 'AKOUZIUM TAGUPSKII'
-        },
-        {
-            'variedad': 'ALBA ROSA'
-        },
-        {
-            'variedad': 'ALBILLA'
-        },
-        {
-            'variedad': 'ALBURLA'
-        },
-        {
-            'variedad': 'ARAKILINOS'
-        },
-        {
-            'variedad': 'ARNA GUIRNA'
-        },
-        {
-            'variedad': 'ASKARI'
-        },
-        {
-            'variedad': 'ASSYL KARA'
-        },
-        {
-            'variedad': 'AUTUMN ROYAL'
-        },
-        {
-            'variedad': 'AUTUMN SEEDLESS'
-        },
-        {
-            'variedad': 'BEAUTY SEEDLESS'
-        },
-        {
-            'variedad': 'BIG RED'
-        },
-        {
-            'variedad': 'BLACK HAMBURG'
-        },
-        {
-            'variedad': 'BLACK SEEDLESS'
-        },
-        {
-            'variedad': 'BLUSH SEEDLESS'
-        },
-        {
-            'variedad': 'BOGASKERE'
-        },
-        {
-            'variedad': 'BRAZIL'
-        },
-        {
-            'variedad': 'BURGAGRAVE DE HONGRIE'
-        },
-        {
-            'variedad': 'CABERNET FRANC'
-        },
-        {
-            'variedad': 'CABERNET SAUVIGNON'
-        },
-        {
-            'variedad': 'CALMERIA'
-        },
-        {
-            'variedad': 'CANNER SEEDLESS'
-        },
-        {
-            'variedad': 'CARDINAL'
-        },
-        {
-            'variedad': 'CARIGNAN'
-        },
-        {
-            'variedad': 'CARMENERE'
-        },
-        {
-            'variedad': 'CATANESE NERO'
-        },
-        {
-            'variedad': 'CENTENIAL'
-        },
-        {
-            'variedad': 'CENTENIAL SEEDLESS'
-        },
-        {
-            'variedad': 'CESAR'
-        },
-        {
-            'variedad': 'CHARDONNAY'
-        },
-        {
-            'variedad': 'CHASSELAS'
-        },
-        {
-            'variedad': 'CHASSELAS MUSQUE'
-        },
-        {
-            'variedad': 'CHIRAY OBAK'
-        },
-        {
-            'variedad': 'CHOUCHILLON'
-        },
-        {
-            'variedad': 'COLORINO'
-        },
-        {
-            'variedad': 'CRIMSON'
-        },
-        {
-            'variedad': 'CRIMSON SEEDLESS'
-        },
-        {
-            'variedad': 'CSABA GYONGYE'
-        },
-        {
-            'variedad': 'DELIZIA DE VAPRIO'
-        },
-        {
-            'variedad': 'DOPEL AUGEN'
-        },
-        {
-            'variedad': 'DOWN'
-        },
-        {
-            'variedad': 'DUC DE MAGENTA'
-        },
-        {
-            'variedad': 'EMPEROR'
-        },
-        {
-            'variedad': 'ESPANDERIO TINTO'
-        },
-        {
-            'variedad': 'EXOTICA'
-        },
-        {
-            'variedad': 'FELICIA'
-        },
-        {
-            'variedad': 'FLAME SEEDLESS'
-        },
-        {
-            'variedad': 'FRANKENTAHLER'
-        },
-        {
-            'variedad': 'FRUTILLA'
-        },
-        {
-            'variedad': 'FUE FUKI'
-        },
-        {
-            'variedad': 'GARNACHA TINTORERA'
-        },
-        {
-            'variedad': 'GEWURZTRAMINER'
-        },
-        {
-            'variedad': 'GRAPE ONE'
-        },
-        {
-            'variedad': 'GRENACHE'
-        },
-        {
-            'variedad': 'GROS COLMAN'
-        },
-        {
-            'variedad': 'H16P13'
-        },
-        {
-            'variedad': 'HARMONY'
-        },
-        {
-            'variedad': 'ILUSION'
-        },
-        {
-            'variedad': 'INIA GRAPE ONE'
-        },
-        {
-            'variedad': 'ITALIA'
-        },
-        {
-            'variedad': 'ITALIA PIROVANO'
-        },
-        {
-            'variedad': 'JO RIZLING'
-        },
-        {
-            'variedad': 'JULY MUSCAT'
-        },
-        {
-            'variedad': 'KAPISTONI TETRIV'
-        },
-        {
-            'variedad': 'KHINGOGNY'
-        },
-        {
-            'variedad': 'KIOHO'
-        },
-        {
-            'variedad': 'KORITI ASPRO'
-        },
-        {
-            'variedad': 'KUTLASKII BELYI'
-        },
-        {
-            'variedad': 'LABRUSCO VIADANESE'
-        },
-        {
-            'variedad': 'LAMBRUSCO DEL CASET'
-        },
-        {
-            'variedad': 'LAMEIRO'
-        },
-        {
-            'variedad': 'LN23'
-        },
-        {
-            'variedad': 'LONG YAN'
-        },
-        {
-            'variedad': 'LUMASSINA'
-        },
-        {
-            'variedad': 'MAGDALENA CELINA'
-        },
-        {
-            'variedad': 'MAGDALENA JULIETA'
-        },
-        {
-            'variedad': 'MALAGA II'
-        },
-        {
-            'variedad': 'MALAHY'
-        },
-        {
-            'variedad': 'MALBEC'
-        },
-        {
-            'variedad': 'MANDILARIA'
-        },
-        {
-            'variedad': 'MARAVILLAS DE MALAGA'
-        },
-        {
-            'variedad': 'MARSANNE'
-        },
-        {
-            'variedad': 'MEDUAR'
-        },
-        {
-            'variedad': 'MEHDIK'
-        },
-        {
-            'variedad': 'MELISSA'
-        },
-        {
-            'variedad': 'MERLOT'
-        },
-        {
-            'variedad': 'MONUKKA'
-        },
-        {
-            'variedad': 'MORLIN GRIS'
-        },
-        {
-            'variedad': 'MOSCATEL DE OREIRAS'
-        },
-        {
-            'variedad': 'MOSCATEL NEGRO'
-        },
-        {
-            'variedad': 'MOSCATEL ROSADA'
-        },
-        {
-            'variedad': 'MOUVEDRE'
-        },
-        {
-            'variedad': 'MOUZAC FAUX'
-        },
-        {
-            'variedad': 'OLIVETTE NOIR'
-        },
-        {
-            'variedad': 'ORBOIS'
-        },
-        {
-            'variedad': 'ORLOVI NOKTI'
-        },
-        {
-            'variedad': 'PAIS'
-        },
-        {
-            'variedad': 'PATAGONIA'
-        },
-        {
-            'variedad': 'PERLETTE'
-        },
-        {
-            'variedad': 'PERLON'
-        },
-        {
-            'variedad': 'PERVENETZ PRASKOVEIISKY'
-        },
-        {
-            'variedad': 'PETIT SYRAH'
-        },
-        {
-            'variedad': 'PETIT VERDOT'
-        },
-        {
-            'variedad': 'PEYGAMBER UEZUEMUE'
-        },
-        {
-            'variedad': 'PINOT GRIGIO'
-        },
-        {
-            'variedad': 'PINOT NOIR'
-        },
-        {
-            'variedad': 'PIXIE PINOT'
-        },
-        {
-            'variedad': 'PLANT DE QUEROL'
-        },
-        {
-            'variedad': 'PLANT DO MAROC'
-        },
-        {
-            'variedad': 'PLETSHISTIK'
-        },
-        {
-            'variedad': 'PORTUGAIS BLEU'
-        },
-        {
-            'variedad': 'PRIMOROSA'
-        },
-        {
-            'variedad': 'QUEEN'
-        },
-        {
-            'variedad': 'RAMSEY'
-        },
-        {
-            'variedad': 'RED GLOBE'
-        },
-        {
-            'variedad': 'RED SEEDLESS'
-        },
-        {
-            'variedad': 'REGENT'
-        },
-        {
-            'variedad': 'RETAGLIADO BIANCO'
-        },
-        {
-            'variedad': 'RIBIER'
-        },
-        {
-            'variedad': 'RICH BABA FAUX'
-        },
-        {
-            'variedad': 'RIESLING'
-        },
-        {
-            'variedad': 'ROMORANTIN'
-        },
-        {
-            'variedad': 'RUBY'
-        },
-        {
-            'variedad': 'RUBY CABERNET'
-        },
-        {
-            'variedad': 'RUBY SEEDLESS'
-        },
-        {
-            'variedad': 'SAINT JANET'
-        },
-        {
-            'variedad': 'SAN FRANCISCO'
-        },
-        {
-            'variedad': 'SAUVIGNON BLANC'
-        },
-        {
-            'variedad': 'SAUVIGNON GRIS'
-        },
-        {
-            'variedad': 'SAUVIGNONASSE'
-        },
-        {
-            'variedad': 'SEMILLON'
-        },
-        {
-            'variedad': 'SELECCION_5'
-        },
-        {
-            'variedad': 'SILVANER'
-        },
-        {
-            'variedad': 'SULTANINA MONOCOCCO'
-        },
-        {
-            'variedad': 'SUPERIOR'
-        },
-        {
-            'variedad': 'SUPERIOR SEEDLESS'
-        },
-        {
-            'variedad': 'SYRAH'
-        },
-        {
-            'variedad': 'TANDAYA FAUX'
-        },
-        {
-            'variedad': 'TCHILAR'
-        },
-        {
-            'variedad': 'TEMPRANILLO'
-        },
-        {
-            'variedad': 'THOMPSON SEEDLESS'
-        },
-        {
-            'variedad': 'TINTA CAO'
-        },
-        {
-            'variedad': 'TINTO CASTELLÕA'
-        },
-        {
-            'variedad': 'TOKAY'
-        },
-        {
-            'variedad': 'TRIPLOIDE'
-        },
-        {
-            'variedad': 'TSITSA KAPREI'
-        },
-        {
-            'variedad': 'TSOLIKOURI'
-        },
-        {
-            'variedad': 'UBUREBEKUR'
-        },
-        {
-            'variedad': 'UVA DEL REY'
-        },
-        {
-            'variedad': 'VARADI'
-        },
-        {
-            'variedad': 'VARIETE DO ASISBOUCHEMA'
-        },
-        {
-            'variedad': 'VERDOT'
-        },
-        {
-            'variedad': 'VERNACCIA DI SAN GEMIGNANO'
-        },
-        {
-            'variedad': 'VILLARIS'
-        },
-        {
-            'variedad': 'VIOGNER'
-        },
-        {
-            'variedad': 'VOSKEAT'
-        },
-        {
-            'variedad': 'WHITE RIESLING'
-        },
-        {
-            'variedad': 'YAPINCAK'
-        },
-        {
-            'variedad': 'ZINFADEL'
-        },
-        {
-            'variedad': '19'
-        },
-        {
-            'variedad': '27'
-        },
-        {
-            'variedad': '33'
-        },
-        {
-            'variedad': '40'
-        },
-        {
-            'variedad': '84'
-        },
-        {
-            'variedad': '96'
-        },
-        {
-            'variedad': '102'
-        },
-        {
-            'variedad': '108'
-        },
-        {
-            'variedad': '109'
-        },
-        {
-            'variedad': '115'
-        },
-        {
-            'variedad': '118'
-        },
-        {
-            'variedad': '125'
-        },
-        {
-            'variedad': '130'
-        },
-        {
-            'variedad': '133'
-        },
-        {
-            'variedad': '134'
-        },
-        {
-            'variedad': '136'
-        },
-        {
-            'variedad': '148'
-        },
-        {
-            'variedad': '154'
-        },
-        {
-            'variedad': '159'
-        },
-        {
-            'variedad': '162'
-        },
-        {
-            'variedad': '167'
-        },
-        {
-            'variedad': '169'
-        },
-        {
-            'variedad': '170'
-        },
-        {
-            'variedad': '174'
-        },
-        {
-            'variedad': '175'
-        },
-        {
-            'variedad': '191'
-        },
-        {
-            'variedad': '206'
-        },
-        {
-            'variedad': '208'
-        },
-        {
-            'variedad': '322'
-        },
-        {
-            'variedad': '386'
-        }
+        { variedad: 'Agourane' },
+        { variedad: 'Alburla' },
+        { variedad: 'Arna.Guirna' },
+        { variedad: 'Assyl.Kara' },
+        { variedad: 'Autumn.Royal' },
+        { variedad: 'Autumn.Seedless' },
+        { variedad: 'Beauty' },
+        { variedad: 'Big.Red' },
+        { variedad: 'Black' },
+        { variedad: 'Blush' },
+        { variedad: 'Bogazkere' },
+        { variedad: 'Calmeria' },
+        { variedad: 'Canner' },
+        { variedad: 'Cardinal' },
+        { variedad: 'Centennial' },
+        { variedad: 'Cesar' },
+        { variedad: 'Chaselas.Musque' },
+        { variedad: 'Chirai.Obak' },
+        { variedad: 'Chouchillon' },
+        { variedad: 'Crimson' },
+        { variedad: 'Csaba.Gyangye' },
+        { variedad: 'Dawn' },
+        { variedad: 'Delizia.di.Vaprio' },
+        { variedad: 'Duc.Magenta' },
+        { variedad: 'Emperor' },
+        { variedad: 'Espadeiro.Tinto' },
+        { variedad: 'Exotic' },
+        { variedad: 'Frankentaler' },
+        { variedad: 'Fue.Fuki' },
+        { variedad: 'Gros.Colman' },
+        { variedad: 'Ilusion' },
+        { variedad: 'Iniagrape.one' },
+        { variedad: 'Italia' },
+        { variedad: 'Italia.Pirovano' },
+        { variedad: 'July.Muscat' },
+        { variedad: 'K.Belyi' },
+        { variedad: 'Kapistroni.tetri' },
+        { variedad: 'Korithi' },
+        { variedad: 'Kyoho' },
+        { variedad: 'Lameiro' },
+        { variedad: 'Magdalena' },
+        { variedad: 'Maravilla.de.Malaga' },
+        { variedad: 'Medouar' },
+        { variedad: 'Mehdik' },
+        { variedad: 'Melissa' },
+        { variedad: 'Monukka' },
+        { variedad: 'Moscatel.Oeiras.Faux' },
+        { variedad: 'Moscatel.Rosada' },
+        { variedad: 'Olivette' },
+        { variedad: 'Orbois' },
+        { variedad: 'Orlovi.Nokti' },
+        { variedad: 'Patagonia' },
+        { variedad: 'Pervenetz' },
+        { variedad: 'Plant.de.Maroc' },
+        { variedad: 'Pletchistik' },
+        { variedad: 'Portugais.Bleu' },
+        { variedad: 'Queen' },
+        { variedad: 'Red' },
+        { variedad: 'Red.Globe' },
+        { variedad: 'Retagliado.Bianco' },
+        { variedad: 'Ribier' },
+        { variedad: 'Ruby.Cabernet' },
+        { variedad: 'San.Francisco' },
+        { variedad: 'Seleccion.5' },
+        { variedad: 'Sultanina.Monococo' },
+        { variedad: 'Superior' },
+        { variedad: 'Tandaya' },
+        { variedad: 'Titsa.Kaprei' },
+        { variedad: 'Tsolikouri' },
+        { variedad: 'Uva.Rey' },
+        { variedad: 'Varadi' },
+        { variedad: 'Variete.d.oasis.bou.chemma' },
+        { variedad: 'Verdot' },
+        { variedad: 'Voskeat' },
+        { variedad: 'FLAME SEEDLESS' },
+        { variedad: 'AK.ouziom' },
+        { variedad: '23' },
+        { variedad: 'AG.Isioum' },
     ];
 
     public plantas = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'];
@@ -746,6 +247,8 @@ export class HomeComponent implements OnInit {
         this.captureErrorMessage = undefined;
         console.log('download2');
         this.btnVariedades = false;
+        this.btnSeg = false;
+        this.btnCustom = false;
         let fileName;
 
         if (tipo === 'var') {
