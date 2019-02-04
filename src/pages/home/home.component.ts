@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     public picUrl: string;
     public trustedUrl: SafeUrl;
     public captureErrorMessage: string;
-
+    public toGs = true;
     public downloadSub: Subscription;
 
     public url: Blob;
@@ -270,10 +270,11 @@ export class HomeComponent implements OnInit {
         const url = this.picUrl + '/capture?name=' + fileName;
         console.log('url', url);
 
-        this.downloadSub = this._http.get(this.picUrl + '/capture?name=' + fileName, { responseType: ResponseContentType.Blob })
+        // tslint:disable-next-line:max-line-length
+        this.downloadSub = this._http.get(this.picUrl + `/capture?name=${fileName}&gs=${this.toGs}`, { responseType: ResponseContentType.Blob })
             .subscribe(x => {
                 console.log('status', x.status);
-                if (x.status > 200) {
+                if (x.status > 200 && !this.toGs) {
                     if (x.status === 201) {
                         this.captureErrorMessage = 'Nombre duplicado, cambia el nombre de la foto para registrar.';
                         if (tipo === 'var') { this.btnVariedades = true; }

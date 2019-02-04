@@ -4,7 +4,7 @@
             <br />
             <small>PMGV PhenoLab</small>
             <br />
-            <small>v2.2.1</small>
+            <small>v2.2.3</small>
         </h1>
 
     </mat-toolbar-row>
@@ -174,8 +174,15 @@
             <!-- <input type="text" [(ngModel)]="picUrl" style=" width: 500px; padding: 10px; font-size: 20px; "> -->
             <mat-form-field>
                 <mat-select placeholder="Cámaras disponibles" [(ngModel)]="picUrl">
-                    <mat-option value="http://192.168.50.4:3000"> Cámara 1 </mat-option>
+                    <mat-option value="http://192.168.50.168:3000"> Cámara 1 </mat-option>
                     <mat-option value="http://192.168.50.71:3000"> Cámara 2 </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <h2> Foto a Google Sheet ?</h2>
+            <mat-form-field>
+                <mat-select placeholder="Conexión" [(ngModel)]="toGs">
+                    <mat-option [value]="true"> SI</mat-option>
+                    <mat-option [value]="false">NO </mat-option>
                 </mat-select>
             </mat-form-field>
 
